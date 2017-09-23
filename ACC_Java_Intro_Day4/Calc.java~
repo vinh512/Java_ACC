@@ -3,7 +3,7 @@ public class Calc {
 		
 		// Checks to see if 3 arguments are provided
 		if (args.length != 3) {
-			System.out.println("USAGE: java Calc (number) (operator: +/-%x) (number)");
+			System.out.println("USAGE: java Calc (number) (operator) (number)");
 			return;
 		}
 		
@@ -25,10 +25,6 @@ public class Calc {
 			case "%":
 				result = NUM1 % NUM2;
 				break;
-			// the multiplication symbol(*) is read as wildcard in the commdand line
-			// so we use 'x' instead as expressed in the usage message
-			case "x":
-				result = NUM1 * NUM2;
 			default: 
 				System.out.println("Please enter a valid operator");
 				return;
