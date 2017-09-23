@@ -7,11 +7,10 @@ public class NameFrame {
 			return;
 		}
 		
-		final String NAME = args[0];
-		final int NAME_LENGTH = NAME.length();
+		final int NAME_LENGTH = args[0].length();
 		
 		makeFrame(NAME_LENGTH);
-		System.out.println("| " + NAME + " |");
+		System.out.println("| " + args[0] + " |");
 		makeFrame(NAME_LENGTH);
 	}
 	
