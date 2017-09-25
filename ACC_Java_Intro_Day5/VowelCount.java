@@ -22,6 +22,8 @@ public class VowelCount {
 		char[] vowelArr = { 'a', 'e', 'i', 'o', 'u' };
 		int[] vowelCount = new int[5];
 		
+		// i is the char index of the String quote
+		// j is the vowel index of the vowel array, vowelArr
 		for (int i = 0; i < QUOTE2.length(); i++) {
 			for (int j = 0; j < vowelArr.length; j++) {
 				if (vowelArr[j] == QUOTE2.charAt(i)) {
@@ -31,6 +33,7 @@ public class VowelCount {
 			}
 		}
 		
+		// k is the vowel count of the vowelCount arry
 		for (int k = 0; k < vowelCount.length; k++) {
 			System.out.println(vowelArr[k] + ": " + vowelCount[k]);
 		}
