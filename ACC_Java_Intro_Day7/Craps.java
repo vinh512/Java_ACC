@@ -3,7 +3,7 @@
 	whether you won, lost, or need to continue rerolling for the point value.
 
 	@Author Vinh Huynh
-	@version 1.2 - reworked using if-else statements 
+	@version 1.3 - changed println to printf 
 */
 
 public class Craps {
@@ -24,7 +24,7 @@ public class Craps {
 		}		
 		
 		while (state == POINT) {
-			System.out.println("Your point is " + point + ".");
+			System.out.printf("Your point is %d.\n", point);
 			sum = rollDice();
 			if (sum == 7) 
 				state = LOSE;				
@@ -44,7 +44,7 @@ public class Craps {
 		int die1 = (int)(Math.random() * 6) + 1;
 		int die2 = (int)(Math.random() * 6) + 1;
 		int sum = die1 + die2;
-		System.out.println("\nYou rolled " + die1 + " + " + die2 + " = " + sum + ".");
+		System.out.printf("\nYou rolled %d + %d = %d.\n", die1, die2, sum);
 		return sum;
 	}
 }
