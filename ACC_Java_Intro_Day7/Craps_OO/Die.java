@@ -4,6 +4,5 @@ public class Die {
 	
 	public int getValue() {
 		return this.value;	
-	}
-	
+	}	
 }
