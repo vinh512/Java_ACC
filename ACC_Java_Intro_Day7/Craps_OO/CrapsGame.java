@@ -8,6 +8,12 @@ public class CrapsGame {
 	int d2 = die2.getValue();
 	
 	System.out.printf("d1: %d\n", d1);
-	System.out.printf("d2: %d\n", d2);		
+	System.out.printf("d2: %d\n", d2);
+
+	// Since I used the static modifier for the getSum method,
+	// it requires the class (Die) to invoke
+	int sum = Die.getSum(d1, d2);
+
+	System.out.printf("sum: %d\n", sum);
 	}
 }
