@@ -14,8 +14,12 @@ public class VendingMachine {
 		double total = 0;
 		String coin;
 		
-		while (beerCount != 0) {
-			coin = input.nextLine();
+		System.out.println("\nH=$.50, Q=$.25, D=$.10, N=$.05");
+		System.out.println("Please insert $1.75 for your beer");
+		while (total < 1.75) {
+			
+			System.out.print("Enter coins: ");
+			coin = input.nextLine().toUpperCase();
 			
 			switch(coin) {
 				case "H": total += 0.50; break;
@@ -25,8 +29,17 @@ public class VendingMachine {
 				default : System.out.println("Do not recognize coin"); break;
 			}
 			
-			
 		}
+		
+		
+			if (total == 1.75) {
+				System.out.println("Dispensing - Enjoy your beer!");
+				beerCount--;
+			} else {
+				System.out.println("Dispensing - Enjoy your beer!");
+				System.out.printf("You inserted $%.2f. Here is your change: $%.2f\n", 
+								   total, total - 1.75);
+			}
 		
 		
 		
