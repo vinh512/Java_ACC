@@ -32,13 +32,12 @@ public class VendingMachine {
 		}
 		
 		
-			if (total == 1.75) {
+			if (total >= 1.75) {
 				System.out.println("Dispensing - Enjoy your beer!");
 				beerCount--;
-			} else {
-				System.out.println("Dispensing - Enjoy your beer!");
-				System.out.printf("You inserted $%.2f. Here is your change: $%.2f\n", 
-								   total, total - 1.75);
+				if (total > 1.75) 
+					System.out.printf("You inserted $%.2f. Here is your change: $%.2f\n", 
+								   	   total, total - 1.75);				
 			}
 		
 		
