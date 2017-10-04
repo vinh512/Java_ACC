@@ -14,35 +14,35 @@ public class VendingMachine {
 		double total = 0;
 		String coin;
 		
-		System.out.println("\nH=$.50, Q=$.25, D=$.10, N=$.05");
-		System.out.println("Please insert $1.75 for your beer");
-		while (total < 1.75) {
+		do {
+			System.out.println("\nH=$.50, Q=$.25, D=$.10, N=$.05");
+			System.out.println("Please insert $1.75 for your beer");
 			
-			System.out.print("Enter coins: ");
-			coin = input.nextLine().toUpperCase();
-			
-			switch(coin) {
-				case "H": total += 0.50; break;
-				case "Q": total += 0.25; break;
-				case "D": total += 0.10; break;
-				case "N": total += 0.50; break;
-				default : System.out.println("Do not recognize coin"); break;
+			while (total < 1.75) {	
+				System.out.print("Enter coins: ");
+				coin = input.nextLine().toUpperCase();
+				
+				switch(coin) {
+					case "H": total += 0.50; break;
+					case "Q": total += 0.25; break;
+					case "D": total += 0.10; break;
+					case "N": total += 0.50; break;
+					default : System.out.println("Do not recognize coin"); break;
+				}		
 			}
-			
-		}
-		
-		
+					
 			if (total >= 1.75) {
-				System.out.println("Dispensing - Enjoy your beer!");
+				System.out.println("Dispensing you beer - Enjoy!");
 				beerCount--;
 				if (total > 1.75) 
 					System.out.printf("You inserted $%.2f. Here is your change: $%.2f\n", 
-								   	   total, total - 1.75);				
+									   total, total - 1.75);				
 			}
+			
+			total = 0; // Resets total to repeat while loop
+			
+		} while (beerCount != 0); // End of do-while loop 
 		
-		
-		
-		
-		
+		System.out.println("Out of Beers!");
 	}
 }
