@@ -15,9 +15,10 @@ public class Hello2017 {
       */
 
       // create a Greeting object
-      final Greeting G = new Greeting();
+      //final Greeting G = new Greeting();
+      
       // get a random greeting
-      final String GREETING = G.getOne();
+      final String GREETING = Greeting.getOne();
       // build a RESPONSE
       final String RESPONSE = buildResponse(GREETING);
       // display the response
