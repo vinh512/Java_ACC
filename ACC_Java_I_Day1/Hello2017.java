@@ -8,20 +8,20 @@ import javax.swing.JOptionPane;
 public class Hello2017 {
 
   public static void main(String[] args) {
+
+      /*
+        This file will no longer need to be edited should we want to
+        adjust the greetings. We can add them to our Greeting object
+      */
+
+      // create a Greeting object
+      final Greeting G = new Greeting();
       // get a random greeting
-      final String GREETING = getRandomGreeting();
+      final String GREETING = G.getOne();
       // build a RESPONSE
       final String RESPONSE = buildResponse(GREETING);
       // display the response
       display(RESPONSE);
-  }
-
-  private static String getRandomGreeting() {
-    // provide a predefined array of greeting messages
-    final String[] GREETINGS = {"Hello", "Wassup", "Yo", "Hi", "Howdy"};
-    // generates of random number from 0 - 4
-    final String GREETING = GREETINGS[ (int)(Math.random() * GREETINGS.length) ];
-    return GREETING;
   }
 
   private static String buildResponse(final String GREETING) {
