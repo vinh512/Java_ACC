@@ -14,6 +14,29 @@
 public class Merge {
 	public static void main(String[] args) {
 		// I have 3 employees
+		Employees alice = new Employees("Alice", "aa@widgets.inc");
+		Employees bob = new Employees("Bob", "bb@widgets.inc");
+		Employees gene = new Employees("Gene", "gg@geocities.com");
+		
 		// I print a message to each one
+		System.out.println("\nFrom: Huckster <supplier@thingamajig.com>");
+		System.out.println("To: " + alice.getName() + " <" + alice.getEmail() + ">");
+		System.out.println("Hello " + alice.getName() + ", Thingamajig.com would " +
+						   "like to be your new very best number one supplier. " + 
+						   "Contact us for more details.");
+		
+		// I print a message to each one
+		System.out.println("\nFrom: Huckster <supplier@thingamajig.com>");
+		System.out.println("To: " + bob.getName() + " <" + bob.getEmail() + ">");
+		System.out.println("Hello " + bob.getName() + ", Thingamajig.com would " +
+						   "like to be your new very best number one supplier. " + 
+						   "Contact us for more details.");
+		
+		// I print a message to each one
+		System.out.println("\nFrom: Huckster <supplier@thingamajig.com>");
+		System.out.println("To: " + gene.getName() + " <" + gene.getEmail() + ">");
+		System.out.println("Hello " + gene.getName() + ", Thingamajig.com would " +
+						   "like to be your new very best number one supplier. " + 
+						   "Contact us for more details.");
 	}
 }
