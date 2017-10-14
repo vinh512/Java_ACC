@@ -25,10 +25,10 @@ public class Merge {
 	}
 	
 	private static void printEmail(Employees recipient) {
-		System.out.println("\nFrom: Huckster <supplier@thingamajig.com>");
-		System.out.println("To: " + recipient.getName() + " <" + recipient.getEmail() + ">");
-		System.out.println("Hello " + recipient.getName() + ", Thingamajig.com would " +
-						   "like to be your new very best number one supplier. " + 
-						   "Contact us for more details.");	
+		System.out.printf("\nFrom: Huckster <supplier@thingamajig.com>\n");
+		System.out.printf("To: %s <%s>\n", recipient.getName(), recipient.getEmail());
+		System.out.printf("Hello %s, Thingamajig.com would like to be your new " +
+						  "very best number one supplier. Contact us for more " +
+						  "details.\n", recipient.getName());	
 	}
 }
