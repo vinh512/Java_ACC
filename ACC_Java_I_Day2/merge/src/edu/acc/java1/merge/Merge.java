@@ -13,30 +13,22 @@
 
 public class Merge {
 	public static void main(String[] args) {
-		// I have 3 employees
-		Employees alice = new Employees("Alice", "aa@widgets.inc");
-		Employees bob = new Employees("Bob", "bb@widgets.inc");
-		Employees gene = new Employees("Gene", "gg@geocities.com");
 		
-		// I print a message to each one
-		System.out.println("\nFrom: Huckster <supplier@thingamajig.com>");
-		System.out.println("To: " + alice.getName() + " <" + alice.getEmail() + ">");
-		System.out.println("Hello " + alice.getName() + ", Thingamajig.com would " +
-						   "like to be your new very best number one supplier. " + 
-						   "Contact us for more details.");
+		Employees[] employees = new Employees[3];
+		employees[0] = new Employees("Alice", "aa@widgets.inc");
+		employees[1] = new Employees("Bob", "bb@widgets.inc");
+		employees[2] = new Employees("Gene", "gg@geocities.com");
 		
-		// I print a message to each one
+		for (int i = 0; i < employees.length; i++) {
+			printEmail(employees[i]);			
+		}
+	}
+	
+	private static void printEmail(Employees recipient) {
 		System.out.println("\nFrom: Huckster <supplier@thingamajig.com>");
-		System.out.println("To: " + bob.getName() + " <" + bob.getEmail() + ">");
-		System.out.println("Hello " + bob.getName() + ", Thingamajig.com would " +
+		System.out.println("To: " + recipient.getName() + " <" + recipient.getEmail() + ">");
+		System.out.println("Hello " + recipient.getName() + ", Thingamajig.com would " +
 						   "like to be your new very best number one supplier. " + 
-						   "Contact us for more details.");
-		
-		// I print a message to each one
-		System.out.println("\nFrom: Huckster <supplier@thingamajig.com>");
-		System.out.println("To: " + gene.getName() + " <" + gene.getEmail() + ">");
-		System.out.println("Hello " + gene.getName() + ", Thingamajig.com would " +
-						   "like to be your new very best number one supplier. " + 
-						   "Contact us for more details.");
+						   "Contact us for more details.");	
 	}
 }
