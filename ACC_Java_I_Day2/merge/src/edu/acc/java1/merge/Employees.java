@@ -7,7 +7,7 @@ public class Employees {
 	private String name;
 	private String email;
 	
-	public Employees() {}; // default constructor
+	public Employees() {} // default constructor
 	
 	public Employees(String name, String email) {
 		this.name = name;
