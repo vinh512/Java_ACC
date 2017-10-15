@@ -22,7 +22,7 @@ public class Merge {
 		recipients[2] = new Employees("Gene", "gg@geocities.com");
 		
 		// iterate through array and call print method
-		for (Employee recipient : recipients)
+		for (Employees recipient : recipients)
 			printMsg(recipient);
 	}
 	
