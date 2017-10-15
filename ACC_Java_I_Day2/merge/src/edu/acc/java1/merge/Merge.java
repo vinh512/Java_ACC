@@ -14,16 +14,16 @@
 public class Merge {
 	public static void main(String[] args) {
 		// create an array to hold 3 Employee objects
-		Employees[] employee = new Employees[3];
+		Employees[] recipients = new Employees[3];
 		
 		// populate array with instances of Employees
-		employee[0] = new Employees("Alice", "aa@widgets.inc");
-		employee[1] = new Employees("Bob", "bb@widgets.inc");
-		employee[2] = new Employees("Gene", "gg@geocities.com");
+		recipients[0] = new Employees("Alice", "aa@widgets.inc");
+		recipients[1] = new Employees("Bob", "bb@widgets.inc");
+		recipients[2] = new Employees("Gene", "gg@geocities.com");
 		
 		// iterate through array and call print method
-		for (int i = 0; i < employee.length; i++) 
-			printMsg(employee[i]);			
+		for (Employee recipient : recipients)
+			printMsg(recipient);
 	}
 	
 	// prints out the email message with the corresponding employee
