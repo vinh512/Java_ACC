@@ -13,22 +13,26 @@
 
 public class Merge {
 	public static void main(String[] args) {
-		
+		// create an array to hold 3 Employee objects
 		Employees[] employees = new Employees[3];
+		
+		// populate array with instances of Employees
 		employees[0] = new Employees("Alice", "aa@widgets.inc");
 		employees[1] = new Employees("Bob", "bb@widgets.inc");
 		employees[2] = new Employees("Gene", "gg@geocities.com");
 		
-		for (int i = 0; i < employees.length; i++) {
+		// iterate through array and call print method
+		for (int i = 0; i < employees.length; i++) 
 			printEmail(employees[i]);			
-		}
 	}
 	
+	// prints out the email message with the corresponding employee
 	private static void printEmail(Employees recipient) {
+		final String NAME = recipient.getName();
 		System.out.printf("\nFrom: Huckster <supplier@thingamajig.com>\n");
-		System.out.printf("To: %s <%s>\n", recipient.getName(), recipient.getEmail());
+		System.out.printf("To: %s <%s>\n", NAME, recipient.getEmail());
 		System.out.printf("Hello %s, Thingamajig.com would like to be your new " +
 						  "very best number one supplier. Contact us for more " +
-						  "details.\n", recipient.getName());	
+						  "details.\n", NAME);	
 	}
 }

@@ -1,13 +1,13 @@
 /*
-	This is the Employees class used to create instances of Employees objects
+	This is the Employees class used to create instances of Employees with
+	name and email as fields.
 */
 
 public class Employees {
-	// An employee has a name and an email address as fields
 	private String name;
 	private String email;
 	
-	public Employees() {};
+	public Employees() {}; // default constructor
 	
 	public Employees(String name, String email) {
 		this.name = name;
