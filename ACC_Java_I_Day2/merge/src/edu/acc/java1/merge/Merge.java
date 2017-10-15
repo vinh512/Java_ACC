@@ -12,27 +12,32 @@
 */
 
 public class Merge {
+	
 	public static void main(String[] args) {
-		// create an array to hold 3 Employee objects
+		// create an array to hold 3 Employees objects
 		Employees[] recipients = new Employees[3];
 		
-		// populate array with instances of Employees
+		// populate recipients array with instances of Employees
 		recipients[0] = new Employees("Alice", "aa@widgets.inc");
 		recipients[1] = new Employees("Bob", "bb@widgets.inc");
 		recipients[2] = new Employees("Gene", "gg@geocities.com");
 		
-		// iterate through array and call print method
+		// iterate through array and call printMsg method
 		for (Employees recipient : recipients)
 			printMsg(recipient);
 	}
 	
 	// prints out the email message with the corresponding employee
 	private static void printMsg(Employees recipient) {
-		final String NAME = recipient.getName();
-		System.out.printf("\nFrom: Huckster <supplier@thingamajig.com>\n");
-		System.out.printf("To: %s <%s>\n", NAME, recipient.getEmail());
-		System.out.printf("Hello %s, Thingamajig.com would like to be your new " +
-						  "very best number one supplier. Contact us for more " +
-						  "details.\n", NAME);	
+		final String NAME  = recipient.getName();
+		final String EMAIL = recipient.getEmail();		
+		final String msg;
+		
+		msg = String.format("\nFrom: Huckster <supplier@thingamajig.com>\n" +
+			                "To: %s <%s>\nHello %s, Thingamajig.com would like " +
+			                "to be your new very best number one supplier. " + 
+			                "Contact us for more details.\n", NAME, EMAIL, NAME);
+		
+		System.out.print(msg);
 	}
 }
