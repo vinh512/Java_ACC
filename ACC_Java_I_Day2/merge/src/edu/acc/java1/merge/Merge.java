@@ -24,10 +24,15 @@ public class Merge {
 		
 		// create object for sender of the emails
 		Employees sender = new Employees("Huckster", "supplier@thingamajig.com");
+				
+		// constructs and sends the messages to the recipients
+		MailMerge merge = new MailMerge(sender);
+		
+		merge.send(recipients);
 		
 		// iterate through array and call printMsg method
-		for (Employees recipient : recipients)
-			printMsg(recipient);
+		// for (Employees recipient : recipients)
+		//	printMsg(recipient);
 	}
 	
 	// prints out the email message with the corresponding employee
