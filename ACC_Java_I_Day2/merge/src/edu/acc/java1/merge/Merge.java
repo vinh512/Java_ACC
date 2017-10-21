@@ -29,23 +29,5 @@ public class Merge {
 		MailMerge merge = new MailMerge(sender);
 		
 		merge.send(recipients);
-		
-		// iterate through array and call printMsg method
-		// for (Employees recipient : recipients)
-		//	printMsg(recipient);
-	}
-	
-	// prints out the email message with the corresponding employee
-	private static void printMsg(Employees recipient) {
-		final String NAME  = recipient.getName();
-		final String EMAIL = recipient.getEmail();		
-		final String msg;
-		
-		msg = String.format("\nFrom: Huckster <supplier@thingamajig.com>\n" +
-			                "To: %s <%s>\nHello %s, Thingamajig.com would like " +
-			                "to be your new very best number one supplier. " + 
-			                "Contact us for more details.\n", NAME, EMAIL, NAME);
-		
-		System.out.print(msg);
 	}
 }
