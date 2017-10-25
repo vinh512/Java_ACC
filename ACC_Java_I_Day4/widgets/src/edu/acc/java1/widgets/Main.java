@@ -43,6 +43,20 @@ public class Main {
 
     System.out.println("\nOrdered by Serial Number:");
 
-
+    Collections.sort(widgets, new SerialComparator());
+    for (Widget w : widgets) {
+      int size = w.toString().length();
+      StringBuilder sb = new StringBuilder(size);
+      sb.append(w.MODEL_NO).append(" s/n: ").append(w.SERIAL_NO);
+      sb.append(", color: ").append(w.COLOR).append("\n");
+      System.out.printf("Widget %s", sb.toString());
     }
+  }
+}
+
+class SerialComparator implements Comparator<Widget> {
+  @Override
+  public int compare(Widget a, Widget b) {
+    return a.SERIAL_NO.compareTo(b.SERIAL_NO);
+  }
 }
