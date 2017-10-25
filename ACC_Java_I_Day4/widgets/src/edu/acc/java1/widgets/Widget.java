@@ -14,6 +14,6 @@ public class Widget {
 
   @Override
   public String toString() {
-    return String.format("%s, %s, %s", MODEL_NO, SERIAL_NO, COLOR);
+    return String.format("Widget %s s/n: %s, color: %s", MODEL_NO, SERIAL_NO, COLOR);
   }
 }

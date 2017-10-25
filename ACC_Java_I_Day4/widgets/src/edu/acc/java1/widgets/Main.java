@@ -18,38 +18,24 @@ public class Main {
 
   public static void main(String[] args) {
 
-    Widget w1 = new Widget("Mark 2", "TN-37620", "Red");
-    Widget w2 = new Widget("Mark 2", "TX-76021", "Red");
-    Widget w3 = new Widget("Mark 1", "WA-98112", "Red");
-    Widget w4 = new Widget("Mark 1", "VA-24201", "Black");
-    Widget w5 = new Widget("Mark 2", "KS-66216", "Black");
-
     List<Widget> widgets = new ArrayList<>();
 
-    widgets.add(w1);
-    widgets.add(w2);
-    widgets.add(w3);
-    widgets.add(w4);
-    widgets.add(w5);
+    widgets.add(new Widget("Mark 2", "TN-37620", "Red"));
+    widgets.add(new Widget("Mark 2", "TX-76021", "Red"));
+    widgets.add(new Widget("Mark 1", "WA-98112", "Red"));
+    widgets.add(new Widget("Mark 1", "VA-24201", "Black"));
+    widgets.add(new Widget("Mark 2", "KS-66216", "Black"));
 
     System.out.println("Gene's Widgets:");
     for (Widget w : widgets) {
-      int size = w.toString().length();
-      StringBuilder sb = new StringBuilder(size);
-      sb.append(w.MODEL_NO).append(" s/n: ").append(w.SERIAL_NO);
-      sb.append(", color: ").append(w.COLOR).append("\n");
-      System.out.printf("Widget %s", sb.toString());
+      System.out.println(w);
     }
 
-    System.out.println("\nOrdered by Serial Number:");
-
     Collections.sort(widgets, new SerialComparator());
+
+    System.out.println("\nOrdered by Serial Number:");
     for (Widget w : widgets) {
-      int size = w.toString().length();
-      StringBuilder sb = new StringBuilder(size);
-      sb.append(w.MODEL_NO).append(" s/n: ").append(w.SERIAL_NO);
-      sb.append(", color: ").append(w.COLOR).append("\n");
-      System.out.printf("Widget %s", sb.toString());
+      System.out.println(w);
     }
   }
 }
