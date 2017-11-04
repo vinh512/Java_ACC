@@ -12,6 +12,8 @@ public class WordCounter {
         String line;
         while ((line = br.readLine()) != null) {
 
+          System.out.println("test")
+
         }
 
       } catch (IOException e) {
