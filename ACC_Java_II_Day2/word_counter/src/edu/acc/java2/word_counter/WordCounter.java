@@ -4,7 +4,7 @@ public class WordCounter {
 
   public static void main(String[] args) {
       if (args.length != 2) {
-        System.out.println("Usage: java edu.acc.java.WordCounter [txt filename] [word] ")
+        System.out.println("Usage: java edu.acc.java.WordCounter [txt filename] [word] ");
         return;
       }
 
@@ -12,7 +12,7 @@ public class WordCounter {
         String line;
         while ((line = br.readLine()) != null) {
 
-          System.out.println("test")
+          System.out.println("test");
 
         }
 
