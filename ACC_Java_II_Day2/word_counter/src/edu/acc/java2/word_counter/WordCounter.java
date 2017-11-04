@@ -16,7 +16,7 @@ public class WordCounter {
       try (BufferedReader br = new BufferedReader(new FileReader(args[0])))
       {
         String line;
-        String word = args[1];
+        String wordFind = args[1];
         String wordArray[];
 
         int count = 0;
@@ -29,7 +29,13 @@ public class WordCounter {
           wordArray = line.split(" ");
           System.out.println(Arrays.toString(wordArray));
 
+          for (int i = 0; i < wordArray.length; i++) {
+            if (wordFind.equals(wordArray[i])) {
+              count++;
+            }
+          }
 
+          System.out.println(count);
         }
 
       } catch (IOException e) {
