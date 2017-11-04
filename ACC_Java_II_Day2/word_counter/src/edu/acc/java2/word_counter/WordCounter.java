@@ -34,7 +34,8 @@ public class WordCounter {
 
   private static int countMatch(String line, String wordSearch) {
     int count = 0;
-    String[] wordArray = line.split(" ");
+    //String[] wordArray = line.split(" ");
+    String[] wordArray = line.replaceAll("[^a-zA-z]", " ").split(" ");
     System.out.println(Arrays.toString(wordArray));
 
     for (int i = 0; i < wordArray.length; i++) {
