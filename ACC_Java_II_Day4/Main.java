@@ -17,6 +17,7 @@ import java.util.regex.Pattern;
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println("program started");
         if (args.length != 1) {
             System.out.println("Usage: java -jar edu.acc.java2.taxes.jar [file csv]");
             return;
@@ -24,23 +25,40 @@ public class Main {
         
         final String pattern = "([\\w]+\\.\\d+)(?:[^,]*,){119}([\\w]+\\.\\d+),([\\w]+\\.\\d+)";
         final Pattern patt = Pattern.compile(pattern);
-        String N1, N11901, A11901;
+        String strN1, strN11901, strA11901;
+        double total = 0.0;
         
         try (BufferedReader br = new BufferedReader(new FileReader(args[0]))) {
             String line;
+            System.out.println("entered try block");
             while ((line = br.readLine()) != null) {
                 Matcher m = patt.matcher(line);
                 if (m.find()) {
-                    N1 = m.group(1);
-                    N11901 = m.group(2);
-                    A11901 = m.group(3);
+                    strN1 = m.group(1);
+                    strN11901 = m.group(2);
+                    strA11901 = m.group(3);
+                    System.out.println("N1: " + strN1);
+                    
+                    total += update(strN1, strN11901, strA11901);   
                 }
             }
+            System.out.printf("The total of N1 is: %.4f\n", total);
         } catch (FileNotFoundException fnfe){
             System.out.println("File not found");
+            
         } catch (IOException ioe) {
             System.out.println("Error");
         }
+    }
+    
+    private static double update(String strN1, String strN11901, String strA11901) {
+        double total = 0.0;
+        double numN1     = Double.parseDouble(strN1); 
+        double numN11901 = Double.parseDouble(strN11901);
+        double numA11901 = Double.parseDouble(strA11901);        
+        
+        return numN1;
+        
     }
     
 }
