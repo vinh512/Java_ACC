@@ -23,17 +23,26 @@ public class WordCounter {
     try (BufferedReader br = new BufferedReader(new FileReader(FILE))) {
       String line;
       int countTotal = 0;
+      
+      //System.out.printf(msg searching occurences)
 
       // keeps reading lines until end-of-file and increments count total
       while ((line = br.readLine()) != null) {
         countTotal += countMatch(line, WORD_MATCH);
       }
-      System.out.printf("The word \"%s\" appeared %d times.\n", WORD_MATCH, countTotal);
+      
+      // print msg based on plurality
+      if (countTotal > 0) {
+      	  System.out.printf("The word \"%s\" appeared %d times.\n", WORD_MATCH, countTotal);
+      } else {
+      	  System.out.printf("The word \"%s\" appeared just once.\n", WORD_MATCH);
+      }
+      
     }
-    catch (IOException e) {
+    catch (FileNotFoundException e) {
       System.out.println("Possibly can't find file");
     }
-    catch (Exception e) {
+    catch (IOException e) {
       System.out.println("Error");
       e.printStackTrace();
     }
