@@ -13,8 +13,9 @@
       String[] colors = (String[]) request.getAttribute("colors");
       int rowNum = (Integer) request.getAttribute("row");
       int colNum = rowNum;
+      int randNum = 0;
 
-      // dynamic-row-header and input field
+      // creates html for dynamic-row-header and input field
       out.println("<form action='main' method='POST'>");
       out.println("\t\t<h1><span id='number'>" + rowNum + "</span><span class='title'> - Row Table:</span>"
                   + "<span id='row-input' class='title'>Enter Rows: <input type='text' name='rows'>"
@@ -30,7 +31,7 @@
       for (int row = 1; row <= rowNum; row++) {
         out.println("\t\t<tr>");
           for (int col = 1; col <= colNum; col++) {
-            int randNum = (int) (Math.random() * colors.length);
+            randNum = (int) (Math.random() * colors.length);
 
             // colors the number of cells based on the row number
             if (col <= row)
@@ -40,7 +41,7 @@
           }
         out.println("\t\t</tr>");
       }
-      out.println("\t</table>");
+      out.print("\t</table>");
     %>
   </body>
 </html>
