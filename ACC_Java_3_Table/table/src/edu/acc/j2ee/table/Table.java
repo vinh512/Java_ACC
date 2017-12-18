@@ -19,13 +19,12 @@ public class Table extends HttpServlet {
 
     if (request.getParameter("rows") != null) {
       row = Integer.parseInt(request.getParameter("rows"));
-      // limit rows to a max of 80
-      if (row > 80)
+
+      if (row > 80) // limit rows to a max of 80
         row = 80;
 
-      // set value to zero if negative value entered
-      if (row < 0)
-        row = 0;
+      if (row < 1) // limit rows to a min of 1
+        row = 1;
 
     } else {
       row = 10; // default to 10 rows

@@ -8,29 +8,27 @@
     <link rel="stylesheet" type="text/css" href="resources/style.css">
   </head>
   <body>
+    <form action='main' method='POST'>
+      <h1>
+        <span id='number'>${row}</span><span class='title'> - Row Table:</span>
+        <span id='row-input' class='title'>Enter Rows: </span>
+        <input type='text' name='rows' placeholder=" Integer (1-80)">
+        <input type='submit' value='Submit'>
+      </h1>
+    </form>
+    <table>
     <%
-      // get color values from init params
+      // get color values from init params in DD (web.xml)
       String[] colors = (String[]) request.getAttribute("colors");
       int rowNum = (Integer) request.getAttribute("row");
       int colNum = rowNum;
       int randNum = 0;
 
-      // creates html for dynamic-row-header and input field
-      out.println("<form action='main' method='POST'>");
-      out.println("\t\t<h1><span id='number'>" + rowNum + "</span><span class='title'> - Row Table:</span>"
-                  + "<span id='row-input' class='title'>Enter Rows: <input type='text' name='rows'>"
-                  + "<input type='submit' value='Submit'></span></h1>");
-      out.println("\t</form>");
-      out.println("\t<table>");
-
-      // displays error message if negative value entered
-      if (rowNum <= 0)
-        out.println("\t<h1 class='warning'>Invalid Entry</h1>");
-
-      // generate the table rows and the cells within
+      // generate the table rows and columns
       for (int row = 1; row <= rowNum; row++) {
         out.println("\t\t<tr>");
           for (int col = 1; col <= colNum; col++) {
+            // generate new random number with each iteration for color array
             randNum = (int) (Math.random() * colors.length);
 
             // colors the number of cells based on the row number
@@ -41,7 +39,7 @@
           }
         out.println("\t\t</tr>");
       }
-      out.print("\t</table>");
     %>
+    </table>
   </body>
 </html>
