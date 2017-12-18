@@ -8,16 +8,20 @@
     <link rel="stylesheet" type="text/css" href="resources/style.css">
   </head>
   <body>
-    <form action='main' method='POST'>
-      <h1>
-        <span id='number'>${row}</span><span class='title'> - Row Table:</span>
-        <span id='row-input' class='title'>Enter Rows: </span>
-        <input type='text' name='rows' placeholder=" Integer (1-80)">
-        <input type='submit' value='Submit'>
-      </h1>
-    </form>
+    <div>
+      <h1 id='number' class='fadeIn'>${row}</h1>
+      <h1 class='title'> - Row Table:</h1>
+      <form action='main' method='POST'>
+        <h1 id='row-input'>
+          <span class='title'>Enter Rows: </span>
+          <input type='text' name='rows' placeholder=' Integer (1-80)'>
+          <input type='submit' value='Submit'>
+        </h1>
+      </form>
+    </div>
     <table>
-    <%
+      <tbody>
+      <%
       // get color values from init params in DD (web.xml)
       String[] colors = (String[]) request.getAttribute("colors");
       int rowNum = (Integer) request.getAttribute("row");
@@ -39,7 +43,8 @@
           }
         out.println("\t\t</tr>");
       }
-    %>
+      %>
+      </tbody>
     </table>
   </body>
 </html>
