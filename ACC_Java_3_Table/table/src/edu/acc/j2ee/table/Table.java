@@ -16,20 +16,29 @@ public class Table extends HttpServlet {
   private void processRequest(HttpServletRequest request, HttpServletResponse response)
   throws IOException, ServletException {
     int row = 0;
+    boolean errorMsg = false;
 
-    if (request.getParameter("rows") != null) {
-      row = Integer.parseInt(request.getParameter("rows"));
+      if (request.getParameter("rows") != null) {
+        // enables error to be displayed if invalid user-input
+        try {
+          row = Integer.parseInt(request.getParameter("rows"));
+        } catch (Exception e) {
+          errorMsg = true;
+        }
 
-      if (row > 80) // limit rows to a max of 80
-        row = 80;
+        // limit the rows from 1-50
+        if (errorMsg)
+          row = 0;
+        else if (row < 1)
+          row = 1;
+        else if (row > 50)
+          row = 50;
 
-      if (row < 1) // limit rows to a min of 1
-        row = 1;
+      } else {
+        row = 10; // default to 10 rows
+      }
 
-    } else {
-      row = 10; // default to 10 rows
-    }
-
+    request.setAttribute("errorMsg", errorMsg);
     request.setAttribute("colors", colors);
     request.setAttribute("row", row);
     request.getRequestDispatcher("/WEB-INF/views/table.jsp").forward(request, response);

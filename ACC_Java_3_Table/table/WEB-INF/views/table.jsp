@@ -14,11 +14,15 @@
       <form action='main' method='POST'>
         <h1 id='row-input'>
           <span class='title'>Enter Rows: </span>
-          <input type='text' name='rows' placeholder=' Integer (1-80)'>
+          <input type='text' name='rows' placeholder=' Integer (1-50)'>
           <input type='submit' value='Submit'>
         </h1>
       </form>
     </div>
+    <%
+      if ((Boolean) request.getAttribute("errorMsg"))
+        out.print("<h1 class='warning'>Invalid Entry</h1>");
+    %>
     <table>
       <tbody>
       <%
